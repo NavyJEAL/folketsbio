@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/folketsbio/static/css/main.3504b5c6.css",
+    "main.js": "/folketsbio/static/js/main.61b89fd3.js",
+    "static/js/453.c70ad79f.chunk.js": "/folketsbio/static/js/453.c70ad79f.chunk.js",
+    "index.html": "/folketsbio/index.html",
+    "main.3504b5c6.css.map": "/folketsbio/static/css/main.3504b5c6.css.map",
+    "main.61b89fd3.js.map": "/folketsbio/static/js/main.61b89fd3.js.map",
+    "453.c70ad79f.chunk.js.map": "/folketsbio/static/js/453.c70ad79f.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.3504b5c6.css",
+    "static/js/main.61b89fd3.js"
+  ]
+}
