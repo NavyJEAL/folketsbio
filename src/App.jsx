@@ -1,6 +1,6 @@
 import './App.css';
 import React, { useRef } from 'react';
-import ShowMoreButton from './showmore.js';
+import ShowMoreButton from './showmore.jsx';
 
 function App() {
 	const vnavRef = useRef(null);
@@ -9,8 +9,23 @@ function App() {
 	const dropdownRef = useRef(null);
 	const searchInputRef = useRef(null);
 	const searchBarRef = useRef(null);
+
+	const [theme, setTheme] = React.useState(() => {
+		const savedTheme = localStorage.getItem('theme');
+		return savedTheme || 'dark';
+	  });
+	  
+	  const toggleTheme = () => {
+		const newTheme = theme === 'dark' ? 'light' : 'dark';
+		setTheme(newTheme);
+		localStorage.setItem('theme', newTheme);
+	  };
+
+	  React.useEffect(() => {
+		document.body.className = `${theme}-theme`;
+	  }, [theme]);
+	  
   
-	// Handle dropdown functionality
 	const handleDropClick = () => {
 	  if (vnavRef.current && contentRef.current) {
 		vnavRef.current.style.borderBottomLeftRadius = '0px';
@@ -24,7 +39,7 @@ function App() {
 		contentRef.current.style.display = 'none';
 	  }
 	};
-	// Handle searchbar functionality
+
 	const handleSearchFocus = () => {
 	  if (searchBarRef.current) {
 		searchBarRef.current.style.boxShadow = '0 0 15px rgba(255, 250, 242, 0.7)';
@@ -36,8 +51,9 @@ function App() {
 		searchBarRef.current.style.boxShadow = 'none';
 	  }
 	};
+
   return (
-    <div className="App">
+	<div className={`App ${theme}-theme`}>
 	<div className="banner">
 			<nav id="Vnav" ref={vnavRef}>
 				<ul>
@@ -66,6 +82,9 @@ function App() {
 					<input type="text" placeholder="Sök film, genrer eller event" ref={searchInputRef} onFocus={handleSearchFocus} onBlur={handleSearchBlur}/>
 					<i className="material-icons">search</i>
 				</div>
+				<button onClick={toggleTheme} className="theme-toggle">
+          			<i className="material-icons">{theme === 'dark' ? 'light_mode' : 'dark_mode'}</i>
+        		</button>
 			</nav>
 	</div>
 
@@ -130,7 +149,6 @@ function App() {
 			</div>
 		</div>
 	</div>
-
 	<footer>
 		<div className="container">
 			<div className="contact">
@@ -155,9 +173,8 @@ function App() {
 			</div>
 		</div>
 	</footer>
-
-    </div>
-  );
+</div>
+);
 }
 
 export default App;
