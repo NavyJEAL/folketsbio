@@ -1,6 +1,7 @@
 import './App.css';
 import React, { useRef } from 'react';
 import ShowMoreButton from './showmore.jsx';
+import config from './config.js';
 
 function App() {
 	const vnavRef = useRef(null);
@@ -70,8 +71,8 @@ function App() {
 			</nav>
 
 		<div className="logo">
-			<a href="./index.html">
-			<img src="/images/logo.png" alt="logotyp"/></a>
+			<a href={config.basePath}>
+			<img src={`${config.assetPath}/images/logo.png`} alt="logotyp"/></a>
 		</div>
 
 		<i className="material-icons" id="menu">menu</i>
@@ -92,28 +93,28 @@ function App() {
 		<div className="box" id="visas-nu">
 			<h1>Visas nu</h1>
 			<div className="movies-now" id="nr1">
-				<a href="movieinfo.html"><img src="/images/complete.jpg" alt="Movie title"/>A Complete Unknown</a>
-				<a href="movieinfo.html"><img src="/images/arealpain.jpeg" alt="Movie title"/>A Real Pain</a>
-				<a href="movieinfo.html"><img src="/images/brutalist.jpg" alt="Movie title"/>The Brutalist</a>
-				<a href="movieinfo.html"><img src="/images/babygirl.jpeg" alt="Movie title"/>Babygirl</a>
-				<a href="movieinfo.html"><img src="/images/nosferatu.jpg" alt="Movie title"/>Nosferatu</a>
-				<a href="movieinfo.html"><img src="/images/conclave.jpg" alt="Movie title"/>Conclave</a>
-				<a href="movieinfo.html"><img src="/images/emilia.jpg" alt="Movie title"/>Emilia Perez</a>
-				<a href="movieinfo.html"><img src="/images/maria.jpeg" alt="Movie title"/>Maria</a>
-				<a href="movieinfo.html"><img src="/images/sommarboken.jpg" alt="Movie title"/>Sommarboken</a>
-				<a href="movieinfo.html"><img src="/images/mormor.jpeg" alt="Movie title"/>Min Mormors Miljoner</a>
+				<a href="movieinfo.html"><img src={`${config.assetPath}/images/complete.jpg`} alt="Movie title"/>A Complete Unknown</a>
+				<a href="movieinfo.html"><img src={`${config.assetPath}/images/arealpain.jpeg`} alt="Movie title"/>A Real Pain</a>
+				<a href="movieinfo.html"><img src={`${config.assetPath}/images/brutalist.jpg`} alt="Movie title"/>The Brutalist</a>
+				<a href="movieinfo.html"><img src={`${config.assetPath}/images/babygirl.jpg`} alt="Movie title"/>Babygirl</a>
+				<a href="movieinfo.html"><img src={`${config.assetPath}/images/nosferatu.jpg`} alt="Movie title"/>Nosferatu</a>
+				<a href="movieinfo.html"><img src={`${config.assetPath}/images/conclave.jpg`} alt="Movie title"/>Conclave</a>
+				<a href="movieinfo.html"><img src={`${config.assetPath}/images/emilia.jpg`} alt="Movie title"/>Emilia Perez</a>
+				<a href="movieinfo.html"><img src={`${config.assetPath}/images/maria.jpeg`} alt="Movie title"/>Maria</a>
+				<a href="movieinfo.html"><img src={`${config.assetPath}/images/sommarboken.jpg`} alt="Movie title"/>Sommarboken</a>
+				<a href="movieinfo.html"><img src={`${config.assetPath}/images/mormor.jpeg`} alt="Movie title"/>Min Mormors Miljoner</a>
 			</div>
 			<div className="movies-now" id="nr2">
-				<a href="movieinfo.html"><img src="/images/complete.jpg" alt="Movie title"/>A Complete Unknown</a>
-				<a href="movieinfo.html"><img src="/images/arealpain.jpeg" alt="Movie title"/>A Real Pain</a>
-				<a href="movieinfo.html"><img src="/images/brutalist.jpg" alt="Movie title"/>The Brutalist</a>
-				<a href="movieinfo.html"><img src="/images/babygirl.jpeg" alt="Movie title"/>Babygirl</a>
-				<a href="movieinfo.html"><img src="/images/nosferatu.jpg" alt="Movie title"/>Nosferatu</a>
-				<a href="movieinfo.html"><img src="/images/conclave.jpg" alt="Movie title"/>Conclave</a>
-				<a href="movieinfo.html"><img src="/images/emilia.jpg" alt="Movie title"/>Emilia Perez</a>
-				<a href="movieinfo.html"><img src="/images/maria.jpeg" alt="Movie title"/>Maria</a>
-				<a href="movieinfo.html"><img src="/images/sommarboken.jpg" alt="Movie title"/>Sommarboken</a>
-				<a href="movieinfo.html"><img src="/images/mormor.jpeg" alt="Movie title"/>Min Mormors Miljoner</a>
+			<a href="movieinfo.html"><img src={`${config.assetPath}/images/complete.jpg`} alt="Movie title"/>A Complete Unknown</a>
+				<a href="movieinfo.html"><img src={`${config.assetPath}/images/arealpain.jpeg`} alt="Movie title"/>A Real Pain</a>
+				<a href="movieinfo.html"><img src={`${config.assetPath}/images/brutalist.jpg`} alt="Movie title"/>The Brutalist</a>
+				<a href="movieinfo.html"><img src={`${config.assetPath}/images/babygirl.jpg`} alt="Movie title"/>Babygirl</a>
+				<a href="movieinfo.html"><img src={`${config.assetPath}/images/nosferatu.jpg`} alt="Movie title"/>Nosferatu</a>
+				<a href="movieinfo.html"><img src={`${config.assetPath}/images/conclave.jpg`} alt="Movie title"/>Conclave</a>
+				<a href="movieinfo.html"><img src={`${config.assetPath}/images/emilia.jpg`} alt="Movie title"/>Emilia Perez</a>
+				<a href="movieinfo.html"><img src={`${config.assetPath}/images/maria.jpeg`} alt="Movie title"/>Maria</a>
+				<a href="movieinfo.html"><img src={`${config.assetPath}/images/sommarboken.jpg`} alt="Movie title"/>Sommarboken</a>
+				<a href="movieinfo.html"><img src={`${config.assetPath}/images/mormor.jpeg`} alt="Movie title"/>Min Mormors Miljoner</a>
 			</div>
 			<ShowMoreButton/>
 		</div>
@@ -131,21 +132,21 @@ function App() {
 		<div className="box" id="event">
 			<h1>Evenemang</h1>
 			<div className="event-type">
-				<a href="./event.html"><img src="/images/biovino.png" alt="biovino"/><br/>BioVino</a>
-				<a href="./event.html"><img src="/images/barnvagn.jpg" alt="barnvagnsbio"/><br/>Barnvagnsbio</a>
-				<a href="./event.html"><img src="/images/tinybio.jpg" alt="Småfolketsbio"/><br/>Småfolkets bio</a>
-				<a href="./event.html"><img src="/images/Lynch.png" alt="3x lynch"/><br/>3X Lynch</a>
+				<a href="./event.html"><img src={`${config.assetPath}/images/biovino.png`} alt="biovino"/><br/>BioVino</a>
+				<a href="./event.html"><img src={`${config.assetPath}/images/barnvagn.jpg`} alt="barnvagnsbio"/><br/>Barnvagnsbio</a>
+				<a href="./event.html"><img src={`${config.assetPath}/images/tinybio.jpg`} alt="Småfolketsbio"/><br/>Småfolkets bio</a>
+				<a href="./event.html"><img src={`${config.assetPath}/images/Lynch.png`} alt="3x lynch"/><br/>3X Lynch</a>
 			</div>
 		</div>
 
 		<div className="box" id="coming">
 			<h1>Kommer snart</h1>
 			<div className="coming-soon">
-				<a href="movieinfo.html"><img src="/images/flickan.jpg" alt="Flickan med nålen"/><br/>Flickan Med Nålen</a>
-				<a href="movieinfo.html"><img src="/images/snail.jpeg" alt="memoir of a snail"/><br/>Memoir of a Snail</a>
-				<a href="movieinfo.html"><img src="/images/bror.jpeg" alt="Min oväntade bror"/><br/>Min Oväntade Bror</a>
-				<a href="movieinfo.html"><img src="/images/september.jpeg" alt="September 5"/><br/>September 5</a>
-				<a href="movieinfo.html"><img src="/images/fruit.jpeg" alt="Det heliga trädets frukter"/><br/>Det Heliga Trädets Frukter</a>
+				<a href="movieinfo.html"><img src={`${config.assetPath}/images/flickan.jpg`} alt="Flickan med nålen"/><br/>Flickan Med Nålen</a>
+				<a href="movieinfo.html"><img src={`${config.assetPath}/images/snail.jpeg`} alt="memoir of a snail"/><br/>Memoir of a Snail</a>
+				<a href="movieinfo.html"><img src={`${config.assetPath}/images/bror.jpeg`} alt="Min oväntade bror"/><br/>Min Oväntade Bror</a>
+				<a href="movieinfo.html"><img src={`${config.assetPath}/images/september.jpeg`} alt="September 5"/><br/>September 5</a>
+				<a href="movieinfo.html"><img src={`${config.assetPath}/images/fruit.jpeg`} alt="Det heliga trädets frukter"/><br/>Det Heliga Trädets Frukter</a>
 			</div>
 		</div>
 	</div>
