@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/folketsbio/static/css/main.3504b5c6.css",
-    "main.js": "/folketsbio/static/js/main.cd0e9f3b.js",
+    "main.js": "/folketsbio/static/js/main.94980c9a.js",
     "static/js/453.c70ad79f.chunk.js": "/folketsbio/static/js/453.c70ad79f.chunk.js",
     "index.html": "/folketsbio/index.html",
     "main.3504b5c6.css.map": "/folketsbio/static/css/main.3504b5c6.css.map",
-    "main.cd0e9f3b.js.map": "/folketsbio/static/js/main.cd0e9f3b.js.map",
+    "main.94980c9a.js.map": "/folketsbio/static/js/main.94980c9a.js.map",
     "453.c70ad79f.chunk.js.map": "/folketsbio/static/js/453.c70ad79f.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.3504b5c6.css",
-    "static/js/main.cd0e9f3b.js"
+    "static/js/main.94980c9a.js"
   ]
 }
