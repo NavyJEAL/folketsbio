@@ -108,7 +108,7 @@ function App() {
 			<a href="movieinfo.html"><img src={`${config.assetPath}/images/complete.jpg`} alt="Movie title"/>A Complete Unknown</a>
 				<a href="movieinfo.html"><img src={`${config.assetPath}/images/arealpain.jpeg`} alt="Movie title"/>A Real Pain</a>
 				<a href="movieinfo.html"><img src={`${config.assetPath}/images/brutalist.jpg`} alt="Movie title"/>The Brutalist</a>
-				<a href="movieinfo.html"><img src={`${config.assetPath}/images/babygirl.jpg`} alt="Movie title"/>Babygirl</a>
+				<a href="movieinfo.html"><img src={`${config.assetPath}/images/babygirl.jpeg`} alt="Movie title"/>Babygirl</a>
 				<a href="movieinfo.html"><img src={`${config.assetPath}/images/nosferatu.jpg`} alt="Movie title"/>Nosferatu</a>
 				<a href="movieinfo.html"><img src={`${config.assetPath}/images/conclave.jpg`} alt="Movie title"/>Conclave</a>
 				<a href="movieinfo.html"><img src={`${config.assetPath}/images/emilia.jpg`} alt="Movie title"/>Emilia Perez</a>
