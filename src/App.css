@@ -246,9 +246,11 @@ h1, h2, h3, h4, p, a {
 	margin: 4vh 0 4vh 0;
 }
 
-#nr2{margin: 0;}
+#nr2{
+	margin: 0;
+    display: none;
+}
 
-#nr2 a{display: none;}
 
 .movies-now img{
 	height: 85%; 

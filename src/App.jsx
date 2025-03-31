@@ -53,8 +53,8 @@ function App() {
 	  }
 	};
 
-  return (
-	<div className={`App ${theme}-theme`}>
+return (
+<div className={`App ${theme}-theme`}>
 	<div className="banner">
 			<nav id="Vnav" ref={vnavRef}>
 				<ul>
