@@ -1,65 +1,96 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import config from "../config";
+import {useState} from "react";
 
 function Program() {
-return (
-	<div className="main">
+
+	const [selectedDay, setSelectedDay] = useState("Monday");
+
+	const days = [
+		{ date: "13/12", name: "Måndag", value: "Monday" },
+		{ date: "14/12", name: "Tisdag", value: "Tuesday" },
+		{ date: "15/12", name: "Onsdag", value: "Wednesday" },
+		{ date: "16/12", name: "Torsdag", value: "Thursday" },
+		{ date: "17/12", name: "Fredag", value: "Friday" },
+	]
+
+	const movieSchedules = {
+		Monday: [
+		  { time: "14:45", title: "Konklaven", genre: "Drama", image: "conclave.jpg", available: 24, total: 35 },
+		  { time: "15:30", title: "Maria", genre: "Drama", image: "maria.jpeg", available: 30, total: 35 },
+		  { time: "16:15", title: "Babygirl", genre: "Thriller", image: "babygirl.jpeg", available: 27, total: 35 },
+		  { time: "17:00", title: "A Complete Unknown", genre: "Drama", image: "complete.jpg", available: 43, total: 100 },
+		  { time: "17:45", title: "A Real Pain", genre: "Drama, Komedi", image: "arealpain.jpeg", available: 57, total: 100 },
+		  { time: "18:45", title: "The Brutalist", genre: "Drama", image: "brutalist.jpg", available: 19, total: 35 }
+		],
+		Tuesday: [
+		  { time: "14:00", title: "Maria", genre: "Drama", image: "maria.jpeg", available: 25, total: 35 },
+		  { time: "16:00", title: "Konklaven", genre: "Drama", image: "conclave.jpg", available: 18, total: 35 },
+		  { time: "18:30", title: "A Real Pain", genre: "Drama, Komedi", image: "arealpain.jpeg", available: 62, total: 100 }
+		],
+		Wednesday: [
+		  { time: "15:00", title: "Babygirl", genre: "Thriller", image: "babygirl.jpeg", available: 21, total: 35 },
+		  { time: "17:30", title: "The Brutalist", genre: "Drama", image: "brutalist.jpg", available: 27, total: 35 },
+		  { time: "19:00", title: "A Complete Unknown", genre: "Drama", image: "complete.jpg", available: 55, total: 100 }
+		],
+		Thursday: [
+		  { time: "14:30", title: "Konklaven", genre: "Drama", image: "conclave.jpg", available: 29, total: 35 },
+		  { time: "16:45", title: "Maria", genre: "Drama", image: "maria.jpeg", available: 22, total: 35 },
+		  { time: "19:15", title: "A Real Pain", genre: "Drama, Komedi", image: "arealpain.jpeg", available: 48, total: 100 }
+		],
+		Friday: [
+		  { time: "15:45", title: "Babygirl", genre: "Thriller", image: "babygirl.jpeg", available: 15, total: 35 },
+		  { time: "17:15", title: "A Complete Unknown", genre: "Drama", image: "complete.jpg", available: 38, total: 100 },
+		  { time: "19:30", title: "The Brutalist", genre: "Drama", image: "brutalist.jpg", available: 12, total: 35 }
+		]
+	  };
+
+	const handleDayClick = (day) => {
+		setSelectedDay(day);
+	}
+
+	return(
+		<div className="main">
 		<div className="box">
-			<h1>Välj dag</h1>
-			<div className="days" id="program">
-				<button className="button">Måndag<br/>13/12</button>
-				<button className="button">Tisdag<br/>14/12</button>
-				<button className="button">Onsdag<br/>15/12</button>
-				<button className="button">Torsdag<br/>16/12</button>
-				<button className="button">Fredag<br/>17/12</button>
-			</div>
-
-			<h1>Program</h1>
-
-			<div className="daily-program">
-				<h3>Tid</h3>
-				<h3 className="rubrik">Film</h3>
-				<h3 className="rubrik">Platser kvar</h3>
-
-				<p>14:45</p>
-				<Link to="/moviesinfo"><img src={`${config.assetPath}/images/conclave.jpg`} alt="Konklaven"/></Link>
-				<h4>Konklaven<p>Drama</p></h4>
-				<p>24 av 35</p>
+		  <h1>Välj dag</h1>
+		  <div className="days" id="program">
+			{days.map((day) => (
+			  <button 
+				key={day.value}
+				className={`button ${selectedDay === day.value ? "selected-day" : ""}`} 
+				onClick={() => handleDayClick(day.value)}
+				style={selectedDay === day.value ? {backgroundColor: "var(--button-hover)"} : {}}
+			  >
+				{day.name}<br/>{day.date}
+			  </button>
+			))}
+		  </div>
+  
+		  <h1>Program</h1>
+  
+		  <div className="daily-program">
+			<h3>Tid</h3>
+			<h3 className="rubrik">Film</h3>
+			<h3 className="rubrik">Platser kvar</h3>
+  
+			{movieSchedules[selectedDay].map((movie, index) => (
+			  <React.Fragment key={index}>
+				<p>{movie.time}</p>
+				<Link to="/moviesinfo">
+				  <img 
+					src={`${config.assetPath}/images/${movie.image}`} 
+					alt={movie.title}
+				  />
+				</Link>
+				<h4>{movie.title}<p>{movie.genre}</p></h4>
+				<p>{movie.available} av {movie.total}</p>
 				<Link to="#" className="button">Reservera</Link>
-
-				<p>15:30</p>
-				<Link to="/moviesinfo"><img src={`${config.assetPath}/images/maria.jpeg`} alt="Maria"/></Link>
-				<h4>Maria<p>Drama</p></h4>
-				<p>30 av 35</p>
-				<Link to="#" className="button">Reservera</Link>
-
-				<p>16:15</p>
-				<Link to="/moviesinfo"><img src={`${config.assetPath}/images/babygirl.jpeg`} alt="Babygirl"/></Link>
-				<h4>Babygirl<p>Thriller</p></h4>
-				<p>27 av 35</p>
-				<Link to="#" className="button">Reservera</Link>
-
-				<p>17:00</p>
-				<Link to="/moviesinfo"><img src={`${config.assetPath}/images/complete.jpg`} alt="A Complete Unknown"/></Link>
-				<h4>A Complete Unknown<p>Drama</p></h4>
-				<p>43 av 100</p>
-				<Link to="#" className="button">Reservera</Link>
-
-				<p>17:45</p>
-				<Link to="/moviesinfo"><img src={`${config.assetPath}/images/arealpain.jpeg`} alt="A Real Pain"/></Link>
-				<h4>A Real Pain<p>Drama, Komedi</p></h4>
-				<p>57 av 100</p>
-				<Link to="#" className="button">Reservera</Link>
-				
-				<p>18:45</p>
-				<Link to="/moviesinfo"><img src="/images/brutalist.jpg" alt="The Brutalist"/></Link>
-				<h4>The Brutalist<p>Drama</p></h4>
-				<p>19 av 35</p>
-				<Link to="#" className="button">Reservera</Link>
-			</div>
+			  </React.Fragment>
+			))}
+		  </div>
 		</div>
-	</div>
+	  </div>
 	);
-}
-export default Program;
+  }
+  export default Program;
