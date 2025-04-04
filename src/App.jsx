@@ -12,7 +12,7 @@ import Membership from './pages/membership.jsx';
 import MovieInfo from './pages/movieinfo.jsx';
 import Movies from './pages/movies.jsx';
 import Newsletter from './pages/newsletter.jsx';
-import Program from './pages/program.jsx';
+import MovieProgram from './pages/movieProgram.jsx';
 import Schoolarship from './pages/schoolarship.jsx';
 import TicketInfo from './pages/ticketInfo.jsx';
 
@@ -44,7 +44,7 @@ return (
 				<Route path="/movieinfo" element={<MovieInfo />} />
 				<Route path="/movies" element={<Movies />} />
 				<Route path="/event" element={<Event />} />
-				<Route path="/program" element={<Program />} />
+				<Route path="/movieProgram" element={<MovieProgram />} />
 				<Route path="/newsletter" element={<Newsletter />} />
 				<Route path="/schoolarship" element={<Schoolarship />} />
 				<Route path="/access" element={<Access />} />

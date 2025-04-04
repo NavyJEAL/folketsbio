@@ -38,11 +38,11 @@ function Home() {
       <div className="box" id="program">
         <h1>Program</h1>
         <div className="days">
-          <Link className="button" to="/program">Måndag<br/>13/12</Link>
-          <Link className="button" to="/program">Tisdag<br/>13/12</Link>
-          <Link className="button" to="/program">Onsdag<br/>13/12</Link>
-          <Link className="button" to="/program">Torsdag<br/>3/12</Link>
-          <Link className="button" to="/program">Fredag<br/>13/12</Link>
+          <Link className="button" to="/movieProgram">Måndag<br/>13/12</Link>
+          <Link className="button" to="/movieProgram">Tisdag<br/>13/12</Link>
+          <Link className="button" to="/movieProgram">Onsdag<br/>13/12</Link>
+          <Link className="button" to="/movieProgram">Torsdag<br/>3/12</Link>
+          <Link className="button" to="/movieProgram">Fredag<br/>13/12</Link>
         </div>
       </div>
       <div className="box" id="event">
